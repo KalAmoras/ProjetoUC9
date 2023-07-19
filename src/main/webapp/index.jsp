@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container-fluid">
- <h1>Projeto JSP - Turma 2023</h1>
+ <h1>Projeto UC9 Grupo dos Quentes</h1>
 <div class="container">
 	<form action="form.jsp" method="post">
 	  <div class="mb-3">
@@ -26,21 +26,20 @@
 </div>
 <br><br>
 <hr>
-<% 
- String nome = request.getParameter("nome");
- out.print(nome+"<br><br>");
-%>
+	<% 
+	 String nome = request.getParameter("Nome");
+	 out.print(nome+"<br><br>");
+	%>
 
- <button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-dark">Dark</button>
-
-<button type="button" class="btn btn-link">Link</button>
+	<button type="button" class="btn btn-primary">Primary</button>
+	<button type="button" class="btn btn-secondary">Secondary</button>
+	<button type="button" class="btn btn-success">Success</button>
+	<button type="button" class="btn btn-danger">Danger</button>
+	<button type="button" class="btn btn-warning">Warning</button>
+	<button type="button" class="btn btn-info">Info</button>
+	<button type="button" class="btn btn-light">Light</button>
+	<button type="button" class="btn btn-dark">Dark</button>	
+	<button type="button" class="btn btn-link">Link</button>
 
 <br><br>
 
