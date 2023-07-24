@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ConnectionMySQL_Example {
+public class ConnectionMySQL {
 	// Declaração de Constante
 	private static String DRIVER = "com.mysql.cj.jdbc.Driver"; // indica o nome da classe dentro do JDBC
 	private static String URL = "jdbc:mysql://localhost:3306/SEU_BANCO"; // indicar o endereço do banco
