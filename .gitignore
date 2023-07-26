@@ -1,2 +1,4 @@
 /target/
 ConnectionMySQL.java
+pom.properties
+org.eclipse.core.resources.prefs

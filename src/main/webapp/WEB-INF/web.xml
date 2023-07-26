@@ -9,4 +9,23 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ServletLogin</display-name>
+    <servlet-name>ServletLogin</servlet-name>
+    <servlet-class>controller.ServletLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletLogin</servlet-name>
+    <url-pattern>/ServletLogin</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>FilterAdmin</display-name>
+    <filter-name>FilterAdmin</filter-name>
+    <filter-class>filter.FilterAdmin</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FilterAdmin</filter-name>
+    <url-pattern>/FilterAdmin</url-pattern>
+  </filter-mapping>
 </web-app>
