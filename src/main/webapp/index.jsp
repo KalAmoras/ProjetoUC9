@@ -1,26 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-<meta charset="ISO-8859-1">
-<link rel="stylesheet" href="styles.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-<title>Projeto JSP - Turma 2023</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Homepage</title>
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-  <div class="items">
-    <h1>Sistema de Cadastro de Clientes</h1>
-    <h2>O que você deseja fazer com os clientes?</h2>
-    <input type="text" placeholder="Input temporário para testes aleatórios">
-    <button>Testar</button>
-    <div class="button-container">
-      <button onClick="window.open('cadastro.jsp','cadastro','resizable, height=450, width=450'); return false;">cadastrar</button>
-      <button>editar</button>
-      <button>listar</button>
-      <button>excluir</button>
-    </div>
-  </div>
+      <div class="landing-page">
+        <header>
+          <div class="container">
+            <a href="#" class="logo">Shoes<b>Happy</b></a>
+            <ul class="links">
+              <li>Home</li>
+              <li>Sobre nós</li>
+              <li><a href="login.jsp">Logar</a></li>
+            </ul>
+          </div>
+        </header>
+        <div class="content">
+          <div class="container">
+            <div class="info">
+              <h1>Cassio o mais gostosão!</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
+              <button>Botão aleatório pra ficar bonito	</button>
+            </div>
+            <div class="image">
+              <img src="https://i.postimg.cc/65QxYYzh/001234.png">
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
