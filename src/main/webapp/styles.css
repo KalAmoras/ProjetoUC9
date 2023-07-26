@@ -1,31 +1,116 @@
-@charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
-
-html {
-	margin:0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 body {
-	margin: 0;
-}
+	  flex-direction: column;
+      font-family: 'Rubik', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-.section {
-	background-color: #f1f1f1;
-}
+    .items {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-.items {
+    h1 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
 
-	font-family: 'Poppins', sans-serif;
-	text-align: center;
-}
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
 
-h1 {
-    font-size: 2.5rem;
-    font-weight: 400;
-    text-shadow: 0 2px;
-}
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 250px;
+    }
 
-h2 {
-    font-size: 2.25rem;
-    margin: 0.167em 0;
-}
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 12px 24px; /* Aumenta o tamanho dos botões */
+      font-size: 16px; /* Aumenta o tamanho da fonte dos botões */
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: transform 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);	
+    }
+
+    .list {
+      margin-top: 20px; /* Adiciona um espaço entre os botões e a listagem */
+      text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    .list-item {
+      margin-bottom: 5px;
+    }
+    
+    .edit-button,
+    .delete-button {
+      padding: 5px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .edit-button:hover,
+    .delete-button:hover {
+      color: #007bff;
+    }
+
+    .form-container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .submit-button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .submit-button:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    .fas {
+      background-color: transparent;
+    }
