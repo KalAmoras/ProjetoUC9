@@ -10,8 +10,8 @@ public class ConnectionMySQL {
 	// Declaração de Constante
 	private static String DRIVER = "com.mysql.cj.jdbc.Driver"; // indica o nome da classe dentro do JDBC
 	private static String URL = "jdbc:mysql://localhost:3306/SEU_BANCO"; // indicar o endereço do banco
-	private static String USER = "SEU_USUARIO"; // usuário do BD
-	private static String PASS = "SUA_SENHA"; // senha do BD
+	private static String USER = "osquentes"; // usuário do BD
+	private static String PASS = "TaHpegandof0g0bich0"; // senha do BD
 
 	public static Connection iniciarConexao() {
 		try { // Tentativa de conexão ao BD

@@ -45,8 +45,8 @@ body {
     }
 
     button {
-      padding: 12px 24px; /* Aumenta o tamanho dos botões */
-      font-size: 16px; /* Aumenta o tamanho da fonte dos botões */
+      padding: 12px 24px; 
+      font-size: 16px; 
       background-color: #007bff;
       color: #fff;
       border: none;
@@ -62,8 +62,8 @@ body {
     }
 
     .list {
-      margin-top: 20px; /* Adiciona um espaço entre os botões e a listagem */
-      text-align: left; /* Alinha o texto à esquerda */
+      margin-top: 20px; 
+      text-align: left; 
     }
 
     .list-item {
