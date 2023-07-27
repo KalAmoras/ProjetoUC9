@@ -34,6 +34,8 @@
 						</li>
 						<li class="nav-item"><a class="nav-link" href="relatorios">Relatorios</a>
 						</li>
+						<li class="nav-item"><a class="nav-link" href="lista">Lista</a>
+						</li>
 						<li class="nav-item"><a class="nav-link" href="login.jsp">Logout</a>
 						</li>
 					</ul>
