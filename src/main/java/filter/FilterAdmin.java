@@ -37,7 +37,7 @@ public class FilterAdmin extends HttpFilter implements Filter {
 		String usuarioLogado = (String) sessao.getAttribute("usuario");
 		String urlAutenticar = req.getServletPath();
 		
-		if (usuarioLogado == null && !urlAutenticar.equalsIgnoreCase("/painel/ServletOi")) {
+		if (usuarioLogado == null && !urlAutenticar.equalsIgnoreCase("/painel/admincontrol")) {
 			//Correção da Linha de redirecionamento
 			RequestDispatcher redireciona = request.getRequestDispatcher("/login.jsp");
 			request.setAttribute("mensagem", "Por favor efetue o Login!");

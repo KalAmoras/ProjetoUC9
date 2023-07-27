@@ -15,7 +15,7 @@
 	
   <div class="form-container">
     <h1>Login</h1>
-    <form method="post" action="LoginServlet">
+    <form method="post" action="admincontrol">
 	  		<div>
 	    		<label>Usuário</label>
 	    		<input type="text" name="usuario">

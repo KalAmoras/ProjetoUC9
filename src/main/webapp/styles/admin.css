@@ -6,12 +6,25 @@
 	box-sizing: border-box;
 }
 
-body {
+body, a, h1, h2, p {
 	font-family: 'Rubik', sans-serif;
 }
 
+.bg-custom {
+  background-color: #6c63ff;
+}
+
+.big-text{
+	font-size: 4rem;
+}
+
+.italic {
+	font-style: italic;
+}
+
 a {
-	text-decoration: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 ul {
@@ -85,6 +98,10 @@ ul {
 	min-height: calc(100vh - 150px);
 }
 
+.info {
+	color: #5d5d5d;
+}
+
 .landing-page .content .info h1 {
 	color: #5d5d5d;
 	font-size: 60px;
@@ -128,11 +145,6 @@ button {
 button:hover {
 	background-color: #6c63ff;
 	transform: scale(1.1);
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 @media (min-width: 1200px) {

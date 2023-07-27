@@ -22,10 +22,10 @@
         </header>
         <div class="content">
           <div class="container">
-            <div class="info">
-              <h1>Cassio o mais gostosão!</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
-              <button>Botão aleatório pra ficar bonito	</button>
+            <div class="info text-center d-flex justify-content-center">
+              <h1>Nós fazemos o seu pé mais feliz!</h1>
+              <p>Encontre aqui os melhores calçados pelos melhores preços!</p>
+              <button>Eu quero</button>
             </div>
             <div class="image">
               <img src="https://i.postimg.cc/65QxYYzh/001234.png">
