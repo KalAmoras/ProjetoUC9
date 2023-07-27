@@ -1,8 +1,10 @@
 package controller;
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import connection.ConnectionMySQL;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -134,13 +136,24 @@ public class ClienteController extends HttpServlet {
         response.sendRedirect("ClienteController");
     }
 
-    Cliente client = new ClienteDAO();
-	ClienteDAO clientDAO = new ClienteDAO();
 	
 	private void deleteClient(HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
-		int matricula = Integer.parseInt(request.getParameter("matricula"));
-		clientDAO.deleteClient(matricula);
+			int matricula = Integer.parseInt(request.getParameter("matricula"));
+		
+	        Connection connection = ConnectionMySQL.iniciarConexao();
+
+	        // Create a UserDAO instance with the connection
+	        ClienteDAO clientDAO = new ClienteDAO();
+
+	        // Delete the user from the database
+	        clientDAO.deleteClient(matricula);
+
+	        // Close the database connection after use (You can use a connection pool to manage this)
+	        ConnectionMySQL.encerrarConexao(connection);
+
+	        // Redirect the user back to the delete page after deleting the user
+	        response.sendRedirect("delete.jsp");
 	}
 	
 	/* private void deleteAluno(HttpServletRequest request, HttpServletResponse response)

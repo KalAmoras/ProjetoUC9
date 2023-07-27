@@ -11,11 +11,11 @@ import models.Cliente;
 
 public class ClienteDAO extends Cliente { 
 	
-	private static final String INSERT_SQL = "INSERT INTO Cliente (matricula, nome, endereco, modalidade) VALUES (?, ?, ?, ?)";
-	private static final String UPDATE_SQL = "UPDATE Cliente SET matricula=?, nome=?, endereco=?, modalidade=? WHERE matricula=?";
-    private static final String DELETE_SQL = "DELETE FROM Cliente WHERE matricula=?";
-    private static final String SELECT_ALL_SQL = "SELECT * FROM Cliente";
-    private static final String SELECT_BY_ID_SQL = "SELECT * FROM Cliente WHERE matricula=?";
+	private static final String INSERT_SQL = "INSERT INTO cliente (matricula, nome, endereco, modalidade) VALUES (?, ?, ?, ?)";
+	private static final String UPDATE_SQL = "UPDATE cliente SET matricula=?, nome=?, endereco=?, modalidade=? WHERE matricula=?";
+    private static final String DELETE_SQL = "DELETE FROM cliente WHERE matricula=?";
+    private static final String SELECT_ALL_SQL = "SELECT * FROM cliente";
+    private static final String SELECT_BY_ID_SQL = "SELECT * FROM cliente WHERE matricula=?";
 
 
     public void insertClient(Cliente cliente) {

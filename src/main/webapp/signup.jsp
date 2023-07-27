@@ -13,8 +13,8 @@
 <a class="home-link" href="index.jsp">AdminPage</a>
 </header>
   <div class="form-container">
-    <h1>Cadastro de Clientes</h1>
-    <form method="post">
+    <h1>Cadastro no site</h1>
+    <form method="post"  action="SignUpServlet">
 	  		<div>
 	    		<label>Matricula</label>
 	    		<input type="text" name="usuario">

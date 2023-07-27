@@ -16,7 +16,7 @@
             <ul class="links">
               <li>Home</li>
               <li>Sobre nós</li>
-              <li><a href="login.jsp">Logar</a></li>
+              <li><a href="login.jsp">Login</a></li>
             </ul>
           </div>
         </header>

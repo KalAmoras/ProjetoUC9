@@ -9,15 +9,10 @@ import java.sql.SQLException;
 public class ConnectionMySQL {
 	// Declaração de Constante
 	private static String DRIVER = "com.mysql.cj.jdbc.Driver"; // indica o nome da classe dentro do JDBC
-<<<<<<< HEAD
 	private static String URL = "jdbc:mysql://localhost:3306/SEU_BANCO"; // indicar o endereço do banco
 	private static String USER = "osquentes"; // usuário do BD
 	private static String PASS = "TaHpegandof0g0bich0"; // senha do BD
-=======
-	private static String URL = "jdbc:mysql://localhost:3306/projetouc9"; // indicar o endereço do banco
-	private static String USER = "root"; // usuário do BD
-	private static String PASS = "123456"; // senha do BD
->>>>>>> f751b49ec846d47cefce9a6a951ed48a7c4cad3e
+	
 
 	public static Connection iniciarConexao() {
 		try { // Tentativa de conexão ao BD
