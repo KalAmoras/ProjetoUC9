@@ -10,7 +10,7 @@ import models.Usuario;
 
 import java.io.IOException;
 
-@WebServlet("/LoginServlet")
+@WebServlet("/ServletOi")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

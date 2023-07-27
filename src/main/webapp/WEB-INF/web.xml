@@ -11,13 +11,13 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>ServletLogin</display-name>
-    <servlet-name>ServletLogin</servlet-name>
-    <servlet-class>controller.ServletLogin</servlet-class>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>controller.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ServletLogin</servlet-name>
-    <url-pattern>/ServletLogin</url-pattern>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
   <filter>
     <display-name>FilterAdmin</display-name>

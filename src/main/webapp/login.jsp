@@ -15,7 +15,7 @@
 	
   <div class="form-container">
     <h1>Login</h1>
-    <form method="post" action="ServletLogin">
+    <form method="post" action="LoginServlet">
 	  		<div>
 	    		<label>Usuário</label>
 	    		<input type="text" name="usuario">
