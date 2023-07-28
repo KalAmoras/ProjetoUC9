@@ -47,4 +47,16 @@
 		<servlet-name>ReportServlet</servlet-name>
 		<url-pattern>/ReportServlet</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>NewClientServlet</servlet-name>
+		<servlet-class>controller.NewClientServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NewClientServlet</servlet-name>
+		<url-pattern>/NewClientServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
 </web-app>

@@ -15,13 +15,13 @@ public class DeleteClientServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int matricula = Integer.parseInt(request.getParameter("matricula"));
 
-        Connection connection = ConnectionMySQL.iniciarConexao();
+        Connection conn = ConnectionMySQL.getConnection();
 
-        ClienteDAO clientDAO = new ClienteDAO();
+        ClienteDAO clientDAO = new ClienteDAO(conn);
 
         clientDAO.deleteClient(matricula);
 
-        ConnectionMySQL.encerrarConexao(connection);
+        ConnectionMySQL.encerrarConexao();
 
         response.sendRedirect("ListClientServlet");
     }

@@ -7,15 +7,15 @@ public class Cliente {
 		private String nome;
 		private String endereco;
 		private String modalidade;
-		
+
 
 		//Construtores
-		public Cliente() 
+		public Cliente()
 		{
 			super();
 		}
 
-		
+
 
 		public int getMatricula() {
 			return matricula;
@@ -46,6 +46,6 @@ public class Cliente {
 		}
 		public void setModalidade(String modalidade) {
 			this.modalidade = modalidade;
-		}	
-		
+		}
+
 }

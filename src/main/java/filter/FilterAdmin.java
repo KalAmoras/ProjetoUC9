@@ -21,11 +21,13 @@ public class FilterAdmin extends HttpFilter implements Filter {
 	public FilterAdmin() {
     }
 
+	@Override
 	public void destroy() {
 		// Encerrar processos quando o servidor for parado
 		// Encerra uma conexão com banco
 	}
 
+	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// Interceptar requisições e respostas do sistema
 		// Validar a autenticação
@@ -33,10 +35,10 @@ public class FilterAdmin extends HttpFilter implements Filter {
 		// Validar e Redirecionar páginas da aplicação
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession sessao = req.getSession();
-		
+
 		String usuarioLogado = (String) sessao.getAttribute("usuario");
 		String urlAutenticar = req.getServletPath();
-		
+
 		if (usuarioLogado == null && !urlAutenticar.equalsIgnoreCase("/painel/admincontrol")) {
 			//Correção da Linha de redirecionamento
 			RequestDispatcher redireciona = request.getRequestDispatcher("/login.jsp");
@@ -48,6 +50,7 @@ public class FilterAdmin extends HttpFilter implements Filter {
 		}
 	}
 
+	@Override
 	public void init(FilterConfig fConfig) throws ServletException {
 		// Iniciar a conexão com o Banco
 	}
