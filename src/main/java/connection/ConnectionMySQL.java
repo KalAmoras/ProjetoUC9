@@ -27,9 +27,9 @@ public class ConnectionMySQL {
     private static void iniciarConexao() {
         try {
             if (conn == null || conn.isClosed()) {
-                Class.forName("com.mysql.jdbc.Driver");
+                Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection(URL, USER, PASS);
-                conn.setAutoCommit(false);
+                //conn.setAutoCommit(false);
             }
         } catch (Exception e) {
             e.printStackTrace();

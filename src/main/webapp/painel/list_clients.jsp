@@ -21,13 +21,6 @@
 </head>
 <body>
 
-	<%--<%! int month=2; 
-	<% if(month==2){ %>
-	<a>Its February</a>
-	<% }else{ %>
-	<a>Any month other than February</a>
-	<%} %> --%>
-
 
 	<h1>Lista de Clientes</h1>
 	<table border="1">
@@ -49,8 +42,13 @@
 			<td><%=cliente.getNome()%></td>
 			<td><%=cliente.getEndereco()%></td>
 			<td><%=cliente.getModalidade()%></td>
-			<td><a href="edit-client?id=<%=cliente.getMatricula()%>">Edit</a></td>
-			<td><a href="delete-client?id=<%=cliente.getMatricula()%>">Delete</a></td>
+			<td><a href="editar_cliente?id=<%=cliente.getMatricula()%>">Editar</a></td>
+			<td> 
+				<form action="deletar_cliente" method="post">
+	           		 <input type="hidden" name="matricula" value="<%= cliente.getMatricula() %>">
+	           		 <button type="submit">Deletar</button>
+	            </form>
+	       </td>
 		</tr>
 		<%
 		}
@@ -58,17 +56,15 @@
 	</table>
 	<br>
 
-	<a href="new-client">Add New Client</a>
 
 	<h2>Adicionar novo cliente:</h2>
-	<form action="NewClientServlet" method="post">
-		<label for="matricula">Matricula:</label> <input type="text"
-			id="matricula" name="matricula" required> <label for="nome">Cliente:</label>
-		<input type="text" id="nome" name="nome" required> <label
-			for="endereco">Endereço:</label> <input type="text" id="endereco"
-			name="endereco" required> <label for="modalidade">Modalidade:</label>
+	<form action="lista" method="post">
+		<label for="nome">Cliente:</label>
+		<input type="text" id="nome" name="nome" required> 
+		<label for="endereco">Endereço:</label> 
+		<input type="text" id="endereco" name="endereco" required> 
+		<label for="modalidade">Modalidade:</label>
 		<input type="text" id="modalidade" name="modalidade" required>
-
 		<button type="submit">Adicionar Cliente</button>
 	</form>
 </body>

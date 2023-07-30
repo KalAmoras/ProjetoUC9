@@ -30,20 +30,24 @@ public class NewClientServlet extends HttpServlet {
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    int matricula = Integer.parseInt(request.getParameter("matricula"));
+	    /*int matricula = Integer.parseInt(request.getParameter("matricula"));*/
 		String nome = request.getParameter("nome");
 	    String endereco = request.getParameter("endereco");
 	    String modalidade = request.getParameter("modalidade");
 
 	    Cliente newClient = new Cliente();
-	    newClient.setMatricula(matricula);
 	    newClient.setNome(nome);
 	    newClient.setEndereco(endereco);
 	    newClient.setModalidade(modalidade);
+	    System.out.print("NewServletComeço ");
+
+	    System.out.print(nome + endereco + modalidade);
 
 	    try (Connection connection = ConnectionMySQL.getConnection()) {
 	        ClienteDAO clientDAO = new ClienteDAO(connection);
 	        clientDAO.insertClient(newClient);
+		    System.out.print("NewServletFim ");
+
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    }
