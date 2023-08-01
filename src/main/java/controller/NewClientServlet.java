@@ -39,20 +39,17 @@ public class NewClientServlet extends HttpServlet {
 	    newClient.setNome(nome);
 	    newClient.setEndereco(endereco);
 	    newClient.setModalidade(modalidade);
-	    System.out.print("NewServletComeço ");
 
-	    System.out.print(nome + endereco + modalidade);
 
 	    try (Connection connection = ConnectionMySQL.getConnection()) {
 	        ClienteDAO clientDAO = new ClienteDAO(connection);
 	        clientDAO.insertClient(newClient);
-		    System.out.print("NewServletFim ");
 
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    }
 
-	    response.sendRedirect("painel/list_clients.jsp");
+	    response.sendRedirect("lista");
 	}
 	
 	/*

@@ -25,7 +25,7 @@
 	<h1>Lista de Clientes</h1>
 	<table border="1">
 		<tr>
-			<th>ID</th>
+			<th>Matrícula</th>
 			<th>Nome</th>
 			<th>Endereço</th>
 			<th>Modalidade</th>

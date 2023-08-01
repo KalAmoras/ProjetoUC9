@@ -24,7 +24,7 @@ public class DeleteClientServlet extends HttpServlet {
         if (usuarioLogado == null) {
             response.sendRedirect("login.jsp");
         } else {
-            request.getRequestDispatcher("painel/list_clients.jsp").forward(request, response);
+            request.getRequestDispatcher("list_clients.jsp").forward(request, response);
         }
     }
 	
@@ -39,7 +39,7 @@ public class DeleteClientServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        response.sendRedirect("painel/list_clients.jsp");
+        response.sendRedirect("lista");
     }
 
 }

@@ -65,6 +65,6 @@ public class EditClientServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        response.sendRedirect("painel/list_clients.jsp");
+        response.sendRedirect("lista");
     }
 }
