@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page isELIgnored="false"%>
-
 <%@ page import="java.util.List"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="controller.ListClientServlet"%>
@@ -10,62 +9,149 @@
 <%@ page import="dao.ClienteDAO"%>
 <%@ page import="connection.ConnectionMySQL"%>
 
-
-
 <!DOCTYPE html>
 
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" href="styles/lista.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<title>Lista</title>
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+		<div class="container">
+			<!--<a class="navbar-brand" href="#">Minha Aplicação</a>  -->
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- Itens do menu -->
+			<div
+				class="collapse navbar-collapse align-items-center justify-content-center text-center"
+				id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="login.jsp">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<main>
+		<h1 class="main-heading">adicionar novo cliente:</h1>
+		<form action="lista" method="post">
+			<label for="nome">Cliente:</label> <input type="text" id="nome"
+				name="nome" required> <label for="endereco">Endereço:</label>
+			<input type="text" id="endereco" name="endereco" required> <label
+				for="modalidade">Modalidade:</label> <input type="text"
+				id="modalidade" name="modalidade" required>
+			<button type="submit" class="btn btn-primary mt-2 mb-2 ">
+				<i class="fas fa-user-plus"></i>
+			</button>
+		</form>
 
+		<h1 class="main-heading">lista de Clientes</h1>
+		<div class="table-responsive">
+			<table>
+				<tr>
+					<th class="text-center">Matrícula</th>
+					<th class="text-center">Nome</th>
+					<th class="text-center">Endereço</th>
+					<th class="text-center">Modalidade</th>
+					<th class="text-center d-none d-sm-table-cell">Editar</th>
+					<th class="text-center d-none d-sm-table-cell">Deletar</th>
+				</tr>
 
-	<h1>Lista de Clientes</h1>
-	<table border="1">
-		<tr>
-			<th>Matrícula</th>
-			<th>Nome</th>
-			<th>Endereço</th>
-			<th>Modalidade</th>
-			<th>Editar</th>
-			<th>Deletar</th>
-		</tr>
+				<%
+					List<Cliente> clientes = new ClienteDAO().getAllClients();
+					for (Cliente cliente : clientes) {
+				%>
+				<tr>
+					<td class="text-center align-middle"><span><%= cliente.getMatricula() %></span></td>
+					<td class="text-center align-middle"><span class="editable" data-field="nome"><%= cliente.getNome() %></span></td>
+					<td class="text-center align-middle"><span class="editable" data-field="endereco"><%= cliente.getEndereco() %></span></td>
+					<td class="text-center align-middle"><span class="editable" data-field="modalidade"><%= cliente.getModalidade() %></span></td>
+					<td class="text-center align-middle d-none d-sm-table-cell d-flex justify-content-center">
+						<button class="btn btn-warning editar-cliente" data-id="<%= cliente.getMatricula() %>">
+							<i class="fas fa-edit"></i>
+						</button>
+					</td>
+					<td class="text-center align-middle d-none d-sm-table-cell d-flex justify-content-center">
+						<form class="d-flex justify-content-center" action="deletar_cliente" method="post">
+							<input type="hidden" name="matricula" value="<%= cliente.getMatricula() %>">
+							<button type="submit" class="btn btn-danger">
+								<i class="fas fa-trash-alt"></i>
+							</button>
+						</form>
+					</td>
+				</tr>
+				<%
+				}
+				%>
+			</table>
+		</div>
+	</main>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+		  $(".editar-cliente").on("click", function() {
+		    var clienteId = $(this).data("id");
+		    var tr = $(this).closest("tr");
+		
+		    tr.find(".editable").each(function() {
+		      var valor = $(this).text();
+		      var campo = $(this).data("field");
+		      $(this).html("<input type='text' name='" + campo + "' value='" + valor + "'>");
+		    });
+		
+		    tr.find(".editar-cliente").replaceWith("<button class='btn btn-success salvar-cliente' data-id='" + clienteId + "'><i class='fas fa-save'></i></button>");	
+		  });
+		
+		  $(document).on("click", ".salvar-cliente", function() {
+		    var clienteId = $(this).data("id");
+		    var tr = $(this).closest("tr");
+		    var nome = tr.find("[data-field='nome'] input").val();
+		    var endereco = tr.find("[data-field='endereco'] input").val();
+		    var modalidade = tr.find("[data-field='modalidade'] input").val();
+		
+		    $.ajax({
+		      type: "POST",
+		      url: "editar_cliente",
+		      data: {
+		        matricula: clienteId,
+		        nome: nome,
+		        endereco: endereco,
+		        modalidade: modalidade
+		      },
+		      success: function() {
+		        tr.find(".editable[data-field='nome']").html(nome);
+		        tr.find(".editable[data-field='endereco']").html(endereco);
+		        tr.find(".editable[data-field='modalidade']").html(modalidade);
+		        tr.find(".salvar-cliente").replaceWith("<button class='btn btn-warning editar-cliente' data-id='" + clienteId + "'><i class='fas fa-edit'></i></button>");
+		        tr.find(".btn-danger").show();
+		
+		        location.reload();
+		      }
+		    });
+		  });
+		});
+	</script>
 
-		<%
-		List<Cliente> clientes = new ClienteDAO().getAllClients();
-		for (Cliente cliente : clientes) {
-		%>
-		<tr>
-			<td><%=cliente.getMatricula()%></td>
-			<td><%=cliente.getNome()%></td>
-			<td><%=cliente.getEndereco()%></td>
-			<td><%=cliente.getModalidade()%></td>
-			<td><a href="editar_cliente?id=<%=cliente.getMatricula()%>">Editar</a></td>
-			<td> 
-				<form action="deletar_cliente" method="post">
-	           		 <input type="hidden" name="matricula" value="<%= cliente.getMatricula() %>">
-	           		 <button type="submit">Deletar</button>
-	            </form>
-	       </td>
-		</tr>
-		<%
-		}
-		%>
-	</table>
-	<br>
-
-
-	<h2>Adicionar novo cliente:</h2>
-	<form action="lista" method="post">
-		<label for="nome">Cliente:</label>
-		<input type="text" id="nome" name="nome" required> 
-		<label for="endereco">Endereço:</label> 
-		<input type="text" id="endereco" name="endereco" required> 
-		<label for="modalidade">Modalidade:</label>
-		<input type="text" id="modalidade" name="modalidade" required>
-		<button type="submit">Adicionar Cliente</button>
-	</form>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
 </body>
 </html>

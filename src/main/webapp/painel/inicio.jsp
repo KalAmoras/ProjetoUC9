@@ -16,24 +16,23 @@
 <body>
 	<div class="landing-page">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
-			<div class="container-fluid">
+			<div class="container">
+				<!--<a class="navbar-brand" href="#">Minha Aplicação</a>  -->
 				<button class="navbar-toggler" type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarToggleExternalContent"
-					aria-controls="navbarToggleExternalContent" aria-expanded="false"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
 					aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-
-				<div class="collapse navbar-collapse d-flex align-items-center justify-content-center text-center"
-					id="navbarToggleExternalContent">
+				<!-- Itens do menu -->
+				<div class="collapse navbar-collapse align-items-center justify-content-center text-center" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="cadastro">Cadastro</a>
+						<!--<li class="nav-item"><a class="nav-link" href="cadastro">Cadastro</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="relatorios">Relatorios</a>
-						</li>
+						</li>-->
 						<li class="nav-item"><a class="nav-link" href="lista">Lista</a>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="login.jsp">Logout</a>
@@ -43,11 +42,12 @@
 			</div>
 		</nav>
 
-
 		<div class="content">
 			<div class="container">
 				<div>
-					<p class="big-text info italic text-center">Shoes<b>Happy</b> AdminControl</p>
+					<p class="big-text info italic text-center">
+						Shoes<b>Happy</b> AdminControl
+					</p>
 				</div>
 				<div class="image">
 					<img

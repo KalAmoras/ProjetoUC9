@@ -22,9 +22,6 @@ import models.Usuario;
 public class FilterAdmin extends HttpFilter implements Filter {
     private static final long serialVersionUID = 1L;
 
-    public FilterAdmin() {
-    }
-
     @Override
     public void destroy() {
         // Encerrar processos quando o servidor for parado

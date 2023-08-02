@@ -11,10 +11,10 @@ body, a, h1, h2, p {
 }
 
 .bg-custom {
-  background-color: #6c63ff;
+	background-color: #6c63ff;
 }
 
-.big-text{
+.big-text {
 	font-size: 4rem;
 }
 
@@ -23,14 +23,8 @@ body, a, h1, h2, p {
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+	text-decoration: none;
+	color: inherit;
 }
 
 .container {
@@ -38,56 +32,6 @@ ul {
 	padding-right: 15px;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.landing-page header {
-	min-height: 80px;
-	display: flex;
-}
-
-.landing-page header .container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.landing-page header .logo {
-	color: #5d5d5d;
-	font-style: italic;
-	text-transform: capitalize;
-	font-size: 25px;
-}
-
-.logo {
-	transition: transform 0.3s ease;
-}
-
-.logo:hover {
-	transform: scale(1.1);
-}
-
-.landing-page header .links {
-	display: flex;
-	align-items: center;
-}
-
-.landing-page header .links li {
-	margin-left: 30px;
-	color: #5d5d5d;
-	cursor: pointer;
-}
-
-.landing-page header .links li {
-	border-radius: 20px;
-	padding: 10px 20px;
-	font-size: 20px;
-	color: #5d5d5d;
-	transition: transform 0.3s ease;
-}
-
-.landing-page header .links li:hover {
-	color: #6c63ff;
-	transform: scale(1.1);
 }
 
 .landing-page .content .container {
