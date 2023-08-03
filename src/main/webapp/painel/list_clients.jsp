@@ -71,14 +71,14 @@
 				</div>
 			</form>
 		</div>
-		<div class="lista-clientes">
-			<div>
-				<div style="padding: 20px;">
+		<div style="padding: 20px;">
 					<button type="submit" class="btn-add" id="btnMostrarForm">
 						<i class="fas fa-user-plus" style="font-size: 48px;"></i>
 
 					</button>
 				</div>
+		<div class="lista-clientes">
+			<div>
 				<h1 class="main-heading">Lista de Clientes</h1>
 				<div class="table-container">
 					<table>
