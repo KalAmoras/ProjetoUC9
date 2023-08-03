@@ -88,16 +88,23 @@
     font-weight: bold;
 }
 
-.main-container {
-    background-color: #E4E4E4;
-    overflow: hidden;
-}
-
 .lista-clientes {
-    float: left;
-    width: minmax(100%, 60%);
+	display: flex;
+    
+    
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     box-sizing: border-box;
+}
+
+main {
+    border-radius: 8px;
+    padding: 20px;
+    margin: 40px 40px;
+    background-color: #E4E4E4;
+  
+    box-shadow: 0 4px 8px rgba(108, 99, 255, 0.1);
 }
 
 .main-heading {
@@ -122,14 +129,6 @@ p {
 
 .bg-custom {
     background-color: #6c63ff;
-}
-
-main {
-    border-radius: 8px;
-    padding: 20px;
-    width: 90%;
-    margin: 40px auto;
-    box-shadow: 0 4px 8px rgba(108, 99, 255, 0.1);
 }
 
 label {
