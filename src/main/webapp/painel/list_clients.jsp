@@ -14,7 +14,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles/lista.css">
+<link rel="stylesheet" href="styles/table.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -28,14 +30,12 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
 		<div class="container">
-			<!--<a class="navbar-brand" href="#">Minha Aplicação</a>  -->
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<!-- Itens do menu -->
 			<div
 				class="collapse navbar-collapse align-items-center justify-content-center text-center"
 				id="navbarNav">
@@ -49,6 +49,11 @@
 		</div>
 	</nav>
 	<main class="main-container">
+	      <div class="btn-add-position" style="padding: 20px;">
+				<button type="submit" class="btn-add" id="btnMostrarForm">
+				<i class="fas fa-user-plus" style="font-size: 48px;"></i>
+			</button>
+		  </div>
 		<div class="add-cliente" id="formulario-adicionar">
 			<h1 class="main-heading">Adicionar Novo Cliente</h1>
 			<form action="lista" method="post" class="adicionar-form">
@@ -71,49 +76,38 @@
 				</div>
 			</form>
 		</div>
-		<div style="padding: 20px;">
-					<button type="submit" class="btn-add" id="btnMostrarForm">
-						<i class="fas fa-user-plus" style="font-size: 48px;"></i>
-
-					</button>
-				</div>
 		<div class="lista-clientes">
-			<div>
-				<h1 class="main-heading">Lista de Clientes</h1>
-				<div class="table-container">
-					<table>
+		   <h1 class="main-heading">Lista de Clientes</h1>
+			<div class="table-div">
+					<table class="custom-table">
+						<thead class="custom-thead">
 						<tr>
-							<th class="text-center">Matrícula</th>
-							<th class="text-center">Nome</th>
-							<th class="text-center">Endereço</th>
-							<th class="text-center">Modalidade</th>
-							<th class="text-center d-none d-sm-table-cell">Editar</th>
-							<th class="text-center d-none d-sm-table-cell">Deletar</th>
+							<th>Matrícula</th>
+							<th>Nome</th>
+							<th>Endereço</th>
+							<th>Modalidade</th>
+							<th>Editar</th>
+							<th>Deletar</th>
 						</tr>
-
+						</thead>
+						<tbody class="custom-tbody">
 						<%
 						List<Cliente> clientes = new ClienteDAO().getAllClients();
 						for (Cliente cliente : clientes) {
 						%>
-						<tr class="borda-tr">
-							<td class="text-center align-middle"><span><%=cliente.getMatricula()%></span></td>
-							<td class="text-center align-middle"><span class="editable"
-								data-field="nome"><%=cliente.getNome()%></span></td>
-							<td class="text-center align-middle"><span class="editable"
-								data-field="endereco"><%=cliente.getEndereco()%></span></td>
-							<td class="text-center align-middle"><span class="editable"
-								data-field="modalidade"><%=cliente.getModalidade()%></span></td>
-							<td
-								class="text-center align-middle d-none d-sm-table-cell d-flex justify-content-center">
+						<tr>
+							<td data-label="Matrícula"><span><%=cliente.getMatricula()%></span></td>
+							<td data-label="Nome"><span class="editable" data-field="nome"><%=cliente.getNome()%></span></td>
+							<td data-label="Endereço"><span class="editable" data-field="endereco"><%=cliente.getEndereco()%></span></td>
+							<td data-label="Modalidade"><span class="editable" data-field="modalidade"><%=cliente.getModalidade()%></span></td>
+							<td data-label="Editar">
 								<button class="btn btn-warning editar-cliente"
 									data-id="<%=cliente.getMatricula()%>">
 									<i class="fas fa-edit"></i>
 								</button>
 							</td>
-							<td
-								class="text-center align-middle d-none d-sm-table-cell d-flex justify-content-center">
-								<form class="d-flex justify-content-center"
-									action="deletar_cliente" method="post">
+							<td data-label="Deletar">
+								<form action="deletar_cliente" method="post">
 									<input type="hidden" name="matricula"
 										value="<%=cliente.getMatricula()%>">
 									<button type="submit" class="btn btn-danger">
@@ -121,19 +115,17 @@
 									</button>
 								</form>
 							</td>
-						</tr>
+						</tr>		
 						<%
 						}
 						%>
+						</tbody>
 					</table>
 				</div>
 			</div>
-		</div>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 	<script>
-		// Script para controlar a exibição da div e a animação
 		document.addEventListener("DOMContentLoaded", function() {
 			const btnMostrarForm = document.getElementById("btnMostrarForm");
 			const formularioAdicionar = document
@@ -156,7 +148,7 @@
             tr.find(".editable").each(function () {
                 var valor = $(this).text();
                 var campo = $(this).data("field");
-                $(this).html("<input style='width: 300px;' type='text' name='" + campo + "' value='" + valor + "'>");
+                $(this).html("<input style='width: 300px;' maxlength='45' type='text' name='" + campo + "' value='" + valor + "'>");
             });
 
             tr.find(".editar-cliente").replaceWith("<button class='btn btn-success salvar-cliente' data-id='" + clienteId + "'><i class='fas fa-save'></i></button>");
