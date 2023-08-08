@@ -3,3 +3,5 @@ ConnectionMySQL.java
 ConnectionMySQL.class
 pom.properties
 org.eclipse.core.resources.prefs
+src/main/java/connection/ConnectionMySQL.java
+target/classes/connection/ConnectionMySQL.class
