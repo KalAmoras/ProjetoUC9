@@ -15,7 +15,6 @@
             <a href="#" class="logo">Shoes<b>Happy</b></a>
             <ul class="links">
               <li>Home</li>
-              <li>Sobre nós</li>
               <li><a href="login.jsp">Login</a></li>
             </ul>
           </div>
@@ -25,7 +24,6 @@
             <div class="info text-center d-flex justify-content-center">
               <h1>Nós fazemos o seu pé mais feliz!</h1>
               <p>Encontre aqui os melhores calçados pelos melhores preços!</p>
-              <button>Eu quero</button>
             </div>
             <div class="image">
               <img src="https://i.postimg.cc/65QxYYzh/001234.png">

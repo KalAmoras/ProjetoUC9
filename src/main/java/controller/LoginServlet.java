@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 			request.getRequestDispatcher("painel/inicio.jsp").forward(request, response);
 		}
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -55,4 +55,10 @@ public class LoginServlet extends HttpServlet {
 			redireciona.forward(request, response);
 		}
 	}
+	
+	protected void doLogout(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getSession().invalidate();
+        response.sendRedirect("login.jsp");
+    }
 }

@@ -4,7 +4,8 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Cadastro de Clientes</title>
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles/login.css" />
 </head>
@@ -12,7 +13,6 @@
 <header>
 <a class="home-link" href="index.jsp">Home</a>
 </header>
-	
   <div class="form-container">
     <h1>Login</h1>
     <form method="post" action="admincontrol">
