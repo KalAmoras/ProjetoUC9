@@ -11,4 +11,4 @@ Olá! Esse projeto foi desenvolvido para a UC9 Desenvolvimento de Sistemas, o no
 - Eduardo Teixeira Virissimo
 - Laila Rodrigues
 
-![Animação](https://github.com/KalAmoras/ProjetoUC9/assets/131835078/9c6dee44-8b4f-4c80-9ceb-531ccf01e96a)
+![Animação2](https://github.com/KalAmoras/ProjetoUC9/assets/131835078/38133c79-1223-4511-9ed7-1ebfa5452d9a)
