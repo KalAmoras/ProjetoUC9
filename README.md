@@ -9,6 +9,4 @@ Olá! Esse projeto foi desenvolvido para a UC9 Desenvolvimento de Sistemas, o no
 - Eduardo Teixeira Virissimo
 - Laila Rodrigues
 
-<h1>
-  <img src="https://ik.imagekit.io/lailarodriguesl/logo-senai.png?updatedAt=1691093238408"/>
-</h1>
+![Animação](https://github.com/KalAmoras/ProjetoUC9/assets/131835078/9c6dee44-8b4f-4c80-9ceb-531ccf01e96a)
