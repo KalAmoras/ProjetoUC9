@@ -4,6 +4,8 @@ Olá! Esse projeto foi desenvolvido para a UC9 Desenvolvimento de Sistemas, o no
 ## 🔨 Tools
 - [Java](https://www.oracle.com/java/technologies/)
 - [MySQL](https://www.mysql.com)
+- CSS
+
 ## 🧑🏻‍💻 Creators
 - Cassio Amoras
 - Eduardo Teixeira Virissimo
