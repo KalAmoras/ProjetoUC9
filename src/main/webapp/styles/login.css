@@ -94,3 +94,8 @@ form {
 	max-width: 300px;
 	width: 100%;
 }
+
+#mensagem {
+	padding-top: 20px;
+	margin-top: 20px;
+}

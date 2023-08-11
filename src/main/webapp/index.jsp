@@ -15,6 +15,7 @@
             <a href="#" class="logo">Shoes<b>Happy</b></a>
             <ul class="links">
               <li>Home</li>
+			  <li><a href="signup.jsp">Cadastre-se</a></li>
               <li><a href="login.jsp">Login</a></li>
             </ul>
           </div>
